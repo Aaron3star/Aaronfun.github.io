@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+    <link href="styles/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  </head>
+  <body>
+    <img src="images/firefox-icon.png" alt="My test image">
+    <h1>My main title</h1>
+    <h2>My top level heading</h2>
+    <h3>My subheading</h3>
+    <h4>My sub-subheading</h4>
+    <p>At Mozilla, we’re a global community of technologists, thinkers, and builders working together ... </p>
+    <p>At Mozilla, we’re a global community of</p>
+    
+    <ul> 
+    <li>technologists</li>
+    <li>thinkers</li>
+    <li>builders</li>
+    </ul>
+    
+    <p>working together ... </p>
+    <a>Mozilla Manifesto</a>
+    <a href="https://www.mozilla.org/en-US/about/manifesto/">Mozilla Manifesto</a>
+    <style type="text/css">
+    p {
+    color: red;
+    }
+    p {
+    color: red;
+    width: 500px;
+    border: 1px solid black;
+    }
+    p, li, h1 {
+    color: red;
+    }
+    html {
+    font-size: 10px; /* px means "pixels": the base font size is now 10 pixels high  */
+    font-family: "Open Sans", sans-serif; /* this should be the rest of the output you got from Google fonts */
+    }
+    h1 {
+    font-size: 60px;
+    text-align: center;
+    }
+    
+    p, li {
+    font-size: 16px;    
+    line-height: 2;
+    letter-spacing: 1px;
+    }
+    html {
+    background-color: #00539F;
+    }
+    body {
+    width: 600px;
+    margin: 0 auto;
+    background-color: #FF9500;
+    padding: 0 20px 20px 20px;
+    border: 5px solid black;
+    }
+    h1 {
+    margin: 0;
+    padding: 20px 0;    
+    color: #00539F;
+    text-shadow: 3px 3px 1px black;
+    }
+    img {
+    display: block;
+    margin: 0 auto;
+    }
+    </style>
+    <button>Change user</button>
+    <script>
+    const myHeading = document.querySelector('h1');
+    myHeading.textContent = 'Hello world!';
+    let myVariable ='Bob';
+    myVariable = 'Steve';
+    /*
+    Everything in between is a comment.
+    */
+    //This is a comment
+    let iceCream = 'chocolate';
+    if(iceCream === 'chocolate') {
+    alert('Yay, I love chocolate ice cream!');    
+    } else {
+    alert('Awwww, but chocolate is my favorite...');    
+    }
+    let myVariable = document.querySelector('h1');
+    alert('hello!');
+    function multiply(num1,num2) {
+    let result = num1 * num2;
+    return result;
+    }
+    multiply(4, 7);
+    multiply(20, 20);
+    multiply(0.5, 3);
+    document.querySelector('html').onclick = function() {
+    alert('Ouch! Stop poking me!');
+    }
+    document.querySelector('html').onclick = function() {};
+    let myImage = document.querySelector('img');
+    
+    myImage.onclick = function() {
+    let mySrc = myImage.getAttribute('src');
+    if(mySrc === 'images/firefox-icon.png') {
+    myImage.setAttribute('src','images/firefox2.png');
+    } else {
+    myImage.setAttribute('src','images/firefox-icon.png');
+    }
+    }
+    let myButton = document.querySelector('button');
+    let myHeading = document.querySelector('h1');
+    function setUserName() {
+    let myName = prompt('Please enter your name.');
+    if(!myName) {
+    setUserName();
+    } else {
+    localStorage.setItem('name', myName);
+    myHeading.innerHTML = 'Mozilla is cool, ' + myName;
+    }
+    if(!localStorage.getItem('name')) {
+    setUserName();
+    } else {
+    let storedName = localStorage.getItem('name');
+    myHeading.textContent = 'Mozilla is cool, ' + storedName;
+    }
+    myButton.onclick = function() {
+    setUserName();
+    }
+    </script>
+  </body>
+</html>
